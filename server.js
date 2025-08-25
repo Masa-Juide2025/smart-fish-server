@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -7,7 +6,7 @@ let sensorData = {};  // تخزين بيانات الحساسات مؤقتاً
 
 // استقبال البيانات من الESP
 app.post('/data', (req, res) => {
-  sensorData = req.body; // حفظ البيانات المرسلة
+  sensorData = req.body;
   console.log('Received data:', sensorData);
   res.sendStatus(200);
 });
@@ -17,7 +16,9 @@ app.get('/data', (req, res) => {
   res.json(sensorData);
 });
 
-const PORT = 4000;  // أو أي رقم منفذ آخر متاح
+// 🟢 هذا هو التعديل المهم
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
