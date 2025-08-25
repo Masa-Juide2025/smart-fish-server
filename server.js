@@ -17,7 +17,7 @@ app.get('/data', (req, res) => {
   res.json(sensorData);
 });
 
-const PORT = 3000;
+const PORT = 4000;  // أو أي رقم منفذ آخر متاح
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
