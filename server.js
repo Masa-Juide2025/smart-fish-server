@@ -29,7 +29,7 @@ app.get('/data', (req, res) => {
 
 // إنشاء سيرفر HTTP لتجهيز WebSocket
 const server = http.createServer(app);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // إعداد WebSocket Server
 const wss = new WebSocketServer({ server });
